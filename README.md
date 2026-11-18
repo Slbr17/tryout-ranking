@@ -4,6 +4,10 @@ Built for the King's College London Squash Club and used by the club captains to
 
 A lightweight JavaFX desktop application for manually ranking sports-club tryout players. The ranking lives entirely in memory while the app is open; Excel `.xlsx` workbooks are the save/open format. There is no database, SQL, JDBC, or Spring.
 
+![Tryout Ranking main window showing 20 sample players](docs/main-window.png)
+
+*Screenshot uses made-up sample data from [`docs/sample-players.xlsx`](docs/sample-players.xlsx).*
+
 ## Features
 
 - Excel-like `TableView<Player>` with compact rows and resizable columns
@@ -46,6 +50,12 @@ If you already have Maven installed, `mvn` works in place of `./mvnw`.
 
 In IntelliJ IDEA, open the folder (it is detected as a Maven project), set the Project SDK to JDK 21+, then run the Maven goal `javafx:run`.
 
+## Try it with sample data
+
+[`docs/sample-players.xlsx`](docs/sample-players.xlsx) contains 20 made-up players so you can try the app without real data. Start the app, choose **File → Open**, and select that file.
+
+The sample uses fictional details only: phone numbers are from the `07700 900xxx` range Ofcom reserves for drama, and emails use the reserved `example.com` domain.
+
 ## Keyboard shortcuts
 
 - `Alt + Up` — move selected player up
@@ -84,6 +94,10 @@ src/main/resources/
 src/test/java/com/example/tryoutranking/service/
 ├── ExcelServiceTest.java
 └── RankingServiceTest.java
+
+docs/
+├── main-window.png       # README screenshot
+└── sample-players.xlsx   # made-up demo data
 ```
 
 ## Ranking design

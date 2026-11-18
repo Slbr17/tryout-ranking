@@ -20,3 +20,6 @@ Thumbs.db
 *.xlsx
 *.xls
 *.csv
+
+# ...except the made-up demo file
+!docs/sample-players.xlsx

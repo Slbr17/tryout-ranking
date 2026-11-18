@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/27" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.tryoutranking.controller.MainController" styleClass="app-root">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <MenuItem text="New" accelerator="Shortcut+N" onAction="#handleNew"/>
+                    <MenuItem text="Open..." accelerator="Shortcut+O" onAction="#handleOpen"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Save" accelerator="Shortcut+S" onAction="#handleSave"/>
+                    <MenuItem text="Save As..." accelerator="Shortcut+Shift+S" onAction="#handleSaveAs"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Exit" onAction="#handleExit"/>
+                </Menu>
+                <Menu text="Edit">
+                    <MenuItem fx:id="undoMenuItem" text="Undo" accelerator="Shortcut+Z" onAction="#handleUndo"/>
+                    <MenuItem fx:id="redoMenuItem" text="Redo" accelerator="Shortcut+Y" onAction="#handleRedo"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Add Player" accelerator="Shortcut+Shift+A" onAction="#handleAddPlayer"/>
+                    <MenuItem fx:id="editMenuItem" text="Edit Player" accelerator="Shortcut+E" onAction="#handleEditPlayer"/>
+                    <MenuItem fx:id="deleteMenuItem" text="Delete Player" accelerator="DELETE" onAction="#handleDeletePlayer"/>
+                </Menu>
+            </MenuBar>
+
+            <ToolBar styleClass="main-toolbar">
+                <Button text="+ Add Player" onAction="#handleAddPlayer" styleClass="btn,btn-primary"/>
+                <Button fx:id="editButton" text="Edit" onAction="#handleEditPlayer" styleClass="btn,btn-default"/>
+                <Button fx:id="deleteButton" text="Delete" onAction="#handleDeletePlayer" styleClass="btn,btn-default"/>
+                <Separator orientation="VERTICAL"/>
+                <Label text="Search:" styleClass="toolbar-label"/>
+                <TextField fx:id="searchField" promptText="Name, phone, email, position, status..." prefWidth="340"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Label fx:id="countLabel" text="0 players" styleClass="muted-label"/>
+            </ToolBar>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="playerTable" styleClass="ranking-table">
+            <columns>
+                <TableColumn fx:id="rankColumn" text="Rank" prefWidth="64" minWidth="58" maxWidth="78"/>
+                <TableColumn fx:id="firstNameColumn" text="First Name" prefWidth="130" minWidth="90"/>
+                <TableColumn fx:id="lastNameColumn" text="Last Name" prefWidth="130" minWidth="90"/>
+                <TableColumn fx:id="positionColumn" text="Position" prefWidth="100" minWidth="75"/>
+                <TableColumn fx:id="phoneColumn" text="Phone" prefWidth="145" minWidth="105"/>
+                <TableColumn fx:id="emailColumn" text="Email" prefWidth="220" minWidth="150"/>
+                <TableColumn fx:id="dobColumn" text="DOB" prefWidth="110" minWidth="95"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="125" minWidth="105"/>
+                <TableColumn fx:id="notesColumn" text="Notes" prefWidth="320" minWidth="180"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox spacing="7" styleClass="bottom-panel">
+            <padding><Insets top="9" right="12" bottom="10" left="12"/></padding>
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label fx:id="selectedLabel" text="Selected: —" styleClass="selection-label"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Label text="Move to rank:"/>
+                <TextField fx:id="rankInput" prefWidth="68" promptText="#" onAction="#handleMoveToRank"/>
+                <Button fx:id="rankGoButton" text="Go" onAction="#handleMoveToRank" styleClass="btn,btn-default"/>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="7">
+                <Button fx:id="moveUpButton" text="↑ Move Up" onAction="#handleMoveUp" styleClass="btn,btn-default"/>
+                <Button fx:id="moveDownButton" text="↓ Move Down" onAction="#handleMoveDown" styleClass="btn,btn-default"/>
+                <Button fx:id="moveTopButton" text="Move to Top" onAction="#handleMoveTop" styleClass="btn,btn-default"/>
+                <Button fx:id="moveBottomButton" text="Move to Bottom" onAction="#handleMoveBottom" styleClass="btn,btn-default"/>
+                <Label text="Alt+↑/↓ to move • Ctrl+Shift+↑/↓ top/bottom • Ctrl+Z/Y undo/redo"
+                       styleClass="shortcut-label"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

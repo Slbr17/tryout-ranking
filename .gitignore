@@ -1,0 +1,22 @@
+# Maven build output
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Other IDEs
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Never commit real tryout data (contains players' personal details)
+*.xlsx
+*.xls
+*.csv

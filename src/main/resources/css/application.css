@@ -1,0 +1,98 @@
+.app-root {
+    -fx-font-family: "Segoe UI", "Inter", Arial, sans-serif;
+    -fx-font-size: 12px;
+    -fx-background-color: #f5f6f7;
+}
+
+.menu-bar {
+    -fx-background-color: #f6f7f8;
+    -fx-border-color: transparent transparent #d7dce1 transparent;
+}
+
+.main-toolbar {
+    -fx-padding: 7 10 7 10;
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent transparent #d7dce1 transparent;
+}
+
+.toolbar-label, .selection-label {
+    -fx-font-weight: 600;
+}
+
+.muted-label, .shortcut-label {
+    -fx-text-fill: #64748b;
+}
+
+.shortcut-label {
+    -fx-padding: 0 0 0 10;
+    -fx-font-size: 11px;
+}
+
+.ranking-table {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-fixed-cell-size: 30px;
+}
+
+.ranking-table .column-header-background {
+    -fx-background-color: #eef1f4;
+    -fx-border-color: transparent transparent #cbd2d9 transparent;
+}
+
+.ranking-table .column-header,
+.ranking-table .filler {
+    -fx-background-color: #eef1f4;
+    -fx-size: 31px;
+    -fx-border-color: transparent #d7dce1 #cbd2d9 transparent;
+}
+
+.ranking-table .column-header .label {
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: 700;
+    -fx-text-fill: #26323d;
+    -fx-padding: 0 6 0 6;
+}
+
+.ranking-table .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #edf0f2 transparent;
+}
+
+.ranking-table .table-row-cell:odd {
+    -fx-background-color: #fbfcfd;
+}
+
+.ranking-table .table-row-cell:selected {
+    -fx-background-color: #dcecff;
+    -fx-text-background-color: #111827;
+}
+
+.ranking-table .table-cell {
+    -fx-padding: 4 7 4 7;
+    -fx-border-color: transparent #edf0f2 transparent transparent;
+}
+
+.ranking-table .table-row-cell:drop-before {
+    -fx-border-color: #2563eb transparent transparent transparent;
+    -fx-border-width: 3 0 0 0;
+}
+
+.ranking-table .table-row-cell:drop-after {
+    -fx-border-color: transparent transparent #2563eb transparent;
+    -fx-border-width: 0 0 3 0;
+}
+
+.bottom-panel {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d7dce1 transparent transparent transparent;
+}
+
+.text-field, .combo-box, .date-picker, .text-area {
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+}
+
+.btn {
+    -fx-background-radius: 3;
+    -fx-padding: 5 10 5 10;
+}
